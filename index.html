@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gcshane</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <body onload="typeWriter()">
+    <nav class="navbar bg-dark">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand text-light me-auto" href="#">
+          <img src="/images/potato.jpg" alt="Logo" width="50">
+          gcshane
+        </a>
+        <a class="mx-3" target="_blank" href="https://www.linkedin.com/in/shane-goh/">
+          <img width="30" src="/images/linkedin.svg" alt="">
+        </a>
+        <a target="_blank" href="https://github.com/gcshane"">
+          <img width="30" src="/images/github.svg" alt="">
+        </a>
+      </div>
+    </nav>
+    <div class="container-fluid" id="app">
+      <div class="row bg-dark p-4">
+        <h1 class="text-light text-center" id="engineer">A </h1>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                <Strong>BSc in Information Systems @ SMU</Strong>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <p>AUG 2021 - MAY 2025</p>
+                <span v-for="skill in smu_skills" class="badge rounded-pill text-bg-primary mx-1">{{skill}}</span>
+                <span v-for="cca in smu_cca" class="badge rounded-pill text-bg-success mx-1">{{cca}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                <Strong>Data Engineer Intern @ DBS Bank</Strong>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p>MAY 2024 - AUG 2024</p>
+                <span v-for="skill in dbs_skills" class="badge rounded-pill text-bg-primary mx-1">{{skill}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                <Strong>Cloud Engineer Intern @ Accenture</Strong>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p>MAY 2023 - AUG 2023</p>
+                <span v-for="skill in acn_skills" class="badge rounded-pill text-bg-primary mx-1">{{skill}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row py-5 bg-secondary">
+        <h1 class="text-light text-center">Stuff I Listen To</h1>
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <iframe class="d-block mx-auto w-75" src="https://open.spotify.com/embed/track/3hRV0jL3vUpRrcy398teAU?utm_source=generator"  height="352" frameBorder="0" allowfullscreen="" allow="autoplay;clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-item">
+              <iframe class="d-block mx-auto w-75" src="https://open.spotify.com/embed/track/3qhlB30KknSejmIvZZLjOD?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="carousel-item">
+              <iframe class="d-block mx-auto w-75" src="https://open.spotify.com/embed/track/2plbrEY59IikOBgBGLjaoe?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          smu_skills : ['Web Applications', 'API Development', 'Agile Methodologies', 'Cloud Computing', 'Cybersecurity', 'Data Analytics'],
+          smu_cca : ['ISEP @ Université Paris Dauphine - PSL', 'Vice President @ SMU Caretalyst', 'SMU .Hack HEAP 2023', 'Ellipsis Tech Series Hackathon 2024', 'Mercuria Hackathon 2025'],
+          dbs_skills : ['Python', 'Streamlit', 'Pandas', 'Extract, Transform, Load', 'Generative AI', 'Data Analysis'],
+          acn_skills : ['MariaDB', 'MaxScale', 'Amazon Elastic Compute Cloud (EC2)', 'Red Hat Enterpise Linux (RHEL)', 'Python', 'ServiceNow', 'Amazon Connect']
+        }
+  	  }
+    })
+    const vm = app.mount('#app')
+  </script>
+  <script src="index.js"></script>
+</html>
