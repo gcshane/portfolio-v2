@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <body onload="typeWriter()">
+  <body>
     <!-- <nav class="navbar sticky-top bg-dark">
       <div class="container-fluid d-flex">
         <a class="navbar-brand text-light me-auto" href="#">
@@ -25,7 +25,7 @@
     </nav> -->
     <div class="container-fluid vh-100" id="app">
       <div class="row bg-black min-vh-100">
-        <h1 class="text-light text-center my-auto" id="intro"></h1>
+        <h1 class="text-light text-center my-auto">{{intro}}</h1>
       </div>
       <div class="row bg-dark p-4 min-vh-100">
         <div class="accordion my-auto text-center" id="accordionPanelsStayOpenExample">
@@ -105,11 +105,46 @@
           smu_skills : ['Web Applications', 'API Development', 'Agile Methodologies', 'Cloud Computing', 'Cybersecurity', 'Data Analytics'],
           smu_cca : ['ISEP @ Université Paris Dauphine - PSL', 'Vice President @ SMU Caretalyst', 'SMU .Hack HEAP 2023', 'Ellipsis Tech Series Hackathon 2024', 'Mercuria Hackathon 2025'],
           dbs_skills : ['Python', 'Streamlit', 'Pandas', 'Extract, Transform, Load', 'Generative AI', 'Data Analysis'],
-          acn_skills : ['MariaDB', 'MaxScale', 'Amazon Elastic Compute Cloud (EC2)', 'Red Hat Enterpise Linux (RHEL)', 'Python', 'ServiceNow', 'Amazon Connect']
+          acn_skills : ['MariaDB', 'MaxScale', 'Amazon Elastic Compute Cloud (EC2)', 'Red Hat Enterpise Linux (RHEL)', 'Python', 'ServiceNow', 'Amazon Connect'],
+          i : 0,
+          j : 0,
+          txt : ["Welcome!", "My name is Shane.", "I'm an aspiring software engineer.", "Scroll down to see more!"],
+          forward : true,
+          intro : ""
         }
-  	  }
+  	  },
+      mounted() {
+        this.typeWriter()
+      },
+      methods: {
+        typeWriter() {
+          if (this.i == this.txt[this.j].length && this.forward) {
+            this.forward = false;
+          }
+          else if (this.i == 0 && ! this.forward) {
+            this.forward = true;
+            if (this.j < this.txt.length) {
+              this.j++;
+              }
+          }
+          if (this.forward) {
+            this.intro += this.txt[this.j].charAt(this.i);
+            this.i++;
+          }
+          else if (this.j < this.txt.length - 1) {
+            this.intro = this.intro.slice(0, -1);
+            this.i--;
+          }
+          if (this.i == this.txt[this.j].length) {
+            setTimeout(() => this.typeWriter(), 1000);
+          }
+          else {
+            setTimeout(() => this.typeWriter(), 40);
+          }
+        }
+
+      }
     })
     const vm = app.mount('#app')
   </script>
-  <script src="index.js"></script>
 </html>
