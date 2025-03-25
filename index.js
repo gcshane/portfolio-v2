@@ -1,8 +1,8 @@
 let i = 0;
 let j = 0;
-let txt = ["Software Engineer"];
+let txt = ["Welcome!", "My name is Shane.", "I am an aspiring software engineer.", "Scroll down to see more!"];
 let forward = true
-let target = document.getElementById("engineer");
+let target = document.getElementById("intro");
 
 function typeWriter() {
 
@@ -11,19 +11,15 @@ function typeWriter() {
     }
     else if (i == 0 && ! forward) {
         forward = true;
-        if (j == txt.length - 1) {
-            j = 0;
-        } 
-        else {
+        if (j < txt.length) {
             j++;
         }
-
     }
     if (forward) {
         target.innerHTML += txt[j].charAt(i);
         i++;
     }
-    else {
+    else if (j < txt.length - 1) {
         target.innerHTML = target.innerHTML.slice(0, -1);
         i--;
     }
@@ -31,7 +27,7 @@ function typeWriter() {
         setTimeout(typeWriter, 1000);
     }
     else {
-        setTimeout(typeWriter, 50);
+        setTimeout(typeWriter, 40);
     }
 
 }
