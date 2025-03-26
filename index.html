@@ -104,17 +104,18 @@
         return {
           smu_skills : ['Web Applications', 'API Development', 'Agile Methodologies', 'Cloud Computing', 'Cybersecurity', 'Data Analytics'],
           smu_cca : ['ISEP @ Université Paris Dauphine - PSL', 'Vice President @ SMU Caretalyst', 'SMU .Hack HEAP 2023', 'Ellipsis Tech Series Hackathon 2024', 'Mercuria Hackathon 2025'],
-          dbs_skills : ['Python', 'Streamlit', 'Pandas', 'Extract, Transform, Load', 'Generative AI', 'Data Analysis'],
-          acn_skills : ['MariaDB', 'MaxScale', 'Amazon Elastic Compute Cloud (EC2)', 'Red Hat Enterpise Linux (RHEL)', 'Python', 'ServiceNow', 'Amazon Connect'],
+          dbs_skills : ['Python', 'Streamlit', 'Pandas', 'Extract, Transform, Load', 'Generative AI'],
+          acn_skills : ['MariaDB', 'MaxScale', 'Amazon EC2', 'Red Hat Enterpise Linux (RHEL)', 'Python', 'ServiceNow', 'Amazon Connect'],
           i : 0,
           j : 0,
           txt : ["Welcome!", "My name is Shane.", "I'm an aspiring software engineer.", "Scroll down to see more!"],
           forward : true,
-          intro : ""
+          intro : "",
+          top5 : null
         }
   	  },
       mounted() {
-        this.typeWriter()
+        this.typeWriter();
       },
       methods: {
         typeWriter() {
