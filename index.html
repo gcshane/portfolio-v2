@@ -9,10 +9,10 @@
   </head>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <body>
-    <!-- <nav class="navbar sticky-top bg-dark">
+    <!-- <nav class="navbar fixed-top bg-dark">
       <div class="container-fluid d-flex">
         <a class="navbar-brand text-light me-auto" href="#">
-          <img src="/images/duck.gif" alt="Logo" width="50">
+          <img src="/images/duck.gif" alt="Logo" width="30">
           gcshane
         </a>
         <a class="mx-3" target="_blank" href="https://www.linkedin.com/in/shane-goh/">
@@ -24,7 +24,7 @@
       </div>
     </nav> -->
     <div class="container-fluid vh-100" id="app">
-      <div class="row bg-black min-vh-100">
+      <div class="row bg-black vh-100">
         <h1 class="text-light text-center my-auto">{{intro}}</h1>
       </div>
       <div class="row bg-dark p-4 min-vh-100">
@@ -35,7 +35,7 @@
                 <Strong>Information Systems @ SMU</Strong>
               </button>
             </h2>
-            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionPanelsStayOpenExample">
               <div class="accordion-body">
                 <p>AUG 2021 - MAY 2025</p>
                 <span v-for="skill in smu_skills" class="badge rounded-pill text-bg-primary mx-1">{{skill}}</span>
@@ -50,7 +50,7 @@
                 <Strong>Data Engineer Intern @ DBS Bank</Strong>
               </button>
             </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionPanelsStayOpenExample">
               <div class="accordion-body">
                 <p>MAY 2024 - AUG 2024</p>
                 <span v-for="skill in dbs_skills" class="badge rounded-pill text-bg-primary mx-1">{{skill}}</span>
@@ -63,7 +63,7 @@
                 <Strong>Cloud Engineer Intern @ Accenture</Strong>
               </button>
             </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionPanelsStayOpenExample">
               <div class="accordion-body">
                 <p>MAY 2023 - AUG 2023</p>
                 <span v-for="skill in acn_skills" class="badge rounded-pill text-bg-primary mx-1">{{skill}}</span>
@@ -110,8 +110,7 @@
           j : 0,
           txt : ["Welcome!", "My name is Shane.", "I'm an aspiring software engineer.", "Scroll down to see more!"],
           forward : true,
-          intro : "",
-          top5 : null
+          intro : ""
         }
   	  },
       mounted() {
