@@ -9,7 +9,7 @@
   </head>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <body>
-    <!-- <nav class="navbar fixed-top bg-dark">
+    <nav class="navbar fixed-top bg-dark">
       <div class="container-fluid d-flex">
         <a class="navbar-brand text-light me-auto" href="#">
           <img src="/images/duck.gif" alt="Logo" width="30">
@@ -22,12 +22,12 @@
           <img width="30" src="/images/github.svg" alt="">
         </a>
       </div>
-    </nav> -->
+    </nav>
     <div class="container-fluid vh-100" id="app">
-      <div class="row bg-black vh-100">
+      <div class="row bg-dark vh-100">
         <h1 class="text-light text-center my-auto">{{intro}}</h1>
       </div>
-      <div class="row bg-dark p-4 min-vh-100">
+      <div class="row bg-dark p-4 vh-100">
         <div class="accordion my-auto text-center" id="accordionPanelsStayOpenExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-      <div class="row py-5 bg-secondary min-vh-100">
+      <div class="row py-5 bg-dark vh-100">
         <div id="carouselExample" class="carousel slide my-auto">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -108,7 +108,7 @@
           acn_skills : ['MariaDB', 'MaxScale', 'Amazon EC2', 'Red Hat Enterpise Linux (RHEL)', 'Python', 'ServiceNow', 'Amazon Connect'],
           i : 0,
           j : 0,
-          txt : ["Welcome!", "My name is Shane.", "I'm an aspiring software engineer.", "Scroll down to see more!"],
+          txt : ["Welcome!", "My name is Shane.", "See more below!"],
           forward : true,
           intro : ""
         }
